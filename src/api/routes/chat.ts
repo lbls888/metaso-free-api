@@ -8,16 +8,16 @@ import util from '@/lib/util.ts';
 
 export default {
 
-    prefix: '/v1/chat',
+    prefix: '/yyds/v1/chat',
 
     post: {
 
         '/completions': async (request: Request) => {
             request
-                .validate('body.model', v => _.isUndefined(v) || _.isString(v))
-                .validate('body.messages', _.isArray)
-                .validate('body.tempature', v => _.isUndefined(v) || _.isNumber(v))
-                .validate('headers.authorization', _.isString)
+                。validate('body.model', v => _.isUndefined(v) || _.isString(v))
+                。validate('body.messages', _.isArray)
+                。validate('body.tempature', v => _.isUndefined(v) || _.isNumber(v))
+                。validate('headers.authorization', _.isString)
             // token切分
             const tokens = chat.tokenSplit(request.headers.authorization);
             // 随机挑选一个token
